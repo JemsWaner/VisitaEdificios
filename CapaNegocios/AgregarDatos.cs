@@ -64,7 +64,19 @@ namespace CapaNegocios
                 comando.ExecuteNonQuery();
             }
         }
+        public void ActualizarTipoYUsuario(int id, string tipo_usuario, string solicitud)
+        {
+            using (MySqlCommand comando = new MySqlCommand("ActualizarTipoYSolicitud", connectionNow.conn))
+            {
+                comando.CommandType = CommandType.StoredProcedure;
 
+                comando.Parameters.AddWithValue("@idUsuario", idUsuario);
+                comando.Parameters.AddWithValue("@tipoSolicitud", solicitud);
+                comando.Parameters.AddWithValue("@tipoUsuario", tipo_usuario);
+
+                comando.ExecuteNonQuery();
+            }
+        }
         public void ObtenerID(string nombreUsuario,string contrasenaUsuario) {
             String sql ="select id_usuario from usuario where nombre=@nombreUsuario and contrasena=@contrasenaUsuario";
            

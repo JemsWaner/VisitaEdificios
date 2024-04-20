@@ -106,6 +106,7 @@ namespace CapaNegocios
                         ListaCampos.Add(reader.GetString(1));
                         ListaCampos.Add(reader.GetString(2));
                         ListaCampos.Add(reader.GetString(3));
+                        ListaCampos.Add(reader.GetString(4));
                     }
                 }
             }
