@@ -71,5 +71,45 @@ namespace CapaNegocios
             }
             return ListaUsuarios;
         }
+        public List<String> ObtenerSolicitud()
+        {
+            List<string> solicitudes = new List<string>();
+
+            using (MySqlCommand comando = new MySqlCommand("ObtenerSolicitud", connectionNow.conn))
+            {
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        solicitudes.Add(reader.GetString(0));
+                    }
+                }
+            }
+            return solicitudes;
+        }
+
+        public List<String> ObtenerCampos(int id)
+        {
+            List<string> ListaCampos = new List<string>();
+            String sql = "ObtenerCamposUsuario";
+
+            using (MySqlCommand comando = new MySqlCommand(sql, connectionNow.conn))
+            {
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id_nuevo", id);
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ListaCampos.Add(reader.GetString(0));
+                        ListaCampos.Add(reader.GetString(1));
+                        ListaCampos.Add(reader.GetString(2));
+                        ListaCampos.Add(reader.GetString(3));
+                    }
+                }
+            }
+            return ListaCampos;
+        }
     }
 }

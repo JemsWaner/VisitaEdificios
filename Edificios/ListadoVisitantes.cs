@@ -30,10 +30,21 @@ namespace Edificios
         private void button1_Click(object sender, EventArgs e)
         {
             String seleccionado= listaUsuariosBox.SelectedItem.ToString();
-            String seleccionadoId= seleccionado.Substring(0,1);
-            CapaNegocios.AdminActividades.idUsuario= Convert.ToInt32(seleccionadoId);
-            MessageBox.Show(seleccionadoId);
-            MessageBox.Show(CapaNegocios.AdminActividades.idUsuario.ToString());
+            if (seleccionado.Length != 0)
+            {
+                String seleccionadoId = seleccionado.Substring(0, 1);
+                CapaNegocios.AdminActividades.idUsuario = Convert.ToInt32(seleccionadoId);
+                MessageBox.Show(seleccionadoId);
+                MessageBox.Show("El idUsuario es: " + CapaNegocios.AdminActividades.idUsuario.ToString());
+               
+                EditarUsuario editarUsuario= new EditarUsuario();
+                editarUsuario.Visible = true;
+                this.Visible = false;
+            }
+            else {
+                MessageBox.Show("Debes seleccionar un usuario de la lista");
+            }
+
         }
     }
 }

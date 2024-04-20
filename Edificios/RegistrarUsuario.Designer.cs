@@ -440,6 +440,7 @@
             this.carreraComboBox.Name = "carreraComboBox";
             this.carreraComboBox.Size = new System.Drawing.Size(353, 28);
             this.carreraComboBox.TabIndex = 44;
+            this.carreraComboBox.SelectedIndexChanged += new System.EventHandler(this.carreraComboBox_SelectedIndexChanged);
             // 
             // pictureBox6
             // 

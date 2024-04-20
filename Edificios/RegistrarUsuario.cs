@@ -97,5 +97,10 @@ namespace Edificios
         {
 
         }
+
+        private void carreraComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
