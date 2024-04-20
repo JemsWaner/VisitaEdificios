@@ -52,6 +52,18 @@
     <Compile Include="EdificiosVisitas.Designer.cs">
       <DependentUpon>EdificiosVisitas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListadoVisitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoVisitantes.Designer.cs">
+      <DependentUpon>ListadoVisitantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevosUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevosUsuarios.Designer.cs">
+      <DependentUpon>NuevosUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="OpcionesAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +86,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EdificiosVisitas.resx">
       <DependentUpon>EdificiosVisitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoVisitantes.resx">
+      <DependentUpon>ListadoVisitantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevosUsuarios.resx">
+      <DependentUpon>NuevosUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpcionesAdmin.resx">
       <DependentUpon>OpcionesAdmin.cs</DependentUpon>

@@ -16,7 +16,7 @@ namespace Edificios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegistrarUsuario());
+            Application.Run(new ListadoVisitantes());
         }
     }
 }
