@@ -105,6 +105,28 @@ namespace CapaNegocios
             return tipoUsuario;
         }
 
+        public List<String> ObtenerEdificio(int id)
+        {
+            List<string> edificios = new List<string>();
+            String sql = "ObtenerUsuariosPorEdificio";
+
+            using (MySqlCommand comando = new MySqlCommand(sql, connectionNow.conn))
+            {
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idEdificio", id);
+
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        String nombreApellido= reader.GetString(1) + " " + reader.GetString(2);
+                        edificios.Add(nombreApellido);
+                    }
+                }
+            }
+            return edificios;
+        }
+
         public List<String> ObtenerCarrera()
         {
             List<string> carreras = new List<string>();

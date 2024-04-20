@@ -16,5 +16,19 @@ namespace Edificios
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EdificiosVisitas edificiosVisitas = new EdificiosVisitas();
+            edificiosVisitas.Visible = true;
+            this.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegistrarUsuario registrarUsuario = new RegistrarUsuario();
+            registrarUsuario.Visible = true;
+            this.Visible = false;
+        }
     }
 }

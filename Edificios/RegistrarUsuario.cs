@@ -92,5 +92,10 @@ namespace Edificios
             }
 
         }
+
+        private void RegistrarUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

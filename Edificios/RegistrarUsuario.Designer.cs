@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.contrasenaField = new System.Windows.Forms.MaskedTextBox();
             this.aulaComboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
@@ -69,7 +70,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.contrasenaField = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -140,6 +140,13 @@
             this.panel1.Size = new System.Drawing.Size(699, 1003);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // contrasenaField
+            // 
+            this.contrasenaField.Location = new System.Drawing.Point(282, 430);
+            this.contrasenaField.Name = "contrasenaField";
+            this.contrasenaField.Size = new System.Drawing.Size(352, 26);
+            this.contrasenaField.TabIndex = 100;
             // 
             // aulaComboBox
             // 
@@ -540,13 +547,6 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // contrasenaField
-            // 
-            this.contrasenaField.Location = new System.Drawing.Point(282, 430);
-            this.contrasenaField.Name = "contrasenaField";
-            this.contrasenaField.Size = new System.Drawing.Size(352, 26);
-            this.contrasenaField.TabIndex = 100;
-            // 
             // RegistrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -555,6 +555,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "RegistrarUsuario";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.RegistrarUsuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
