@@ -65,5 +65,24 @@ namespace Edificios
         {
 
         }
+
+        private void pictureBox25_Click(object sender, EventArgs e)
+        {
+
+            String AdminONo = negociosCapa.UsuarioOAdmin(CapaNegocios.AgregarDatos.idUsuario);
+
+            if (AdminONo.Equals("Admin"))
+            {
+                OpcionesAdmin opcionesAdmin = new OpcionesAdmin();
+                opcionesAdmin.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                OpcionesNormal opcionesNormal = new OpcionesNormal();
+                opcionesNormal.Visible = true;
+                this.Visible = false;
+            }
+        }
     }
 }

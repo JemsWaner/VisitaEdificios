@@ -64,6 +64,12 @@
     <Compile Include="ListadoVisitantes.Designer.cs">
       <DependentUpon>ListadoVisitantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginVentana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginVentana.Designer.cs">
+      <DependentUpon>LoginVentana.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevosUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoVisitantes.resx">
       <DependentUpon>ListadoVisitantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginVentana.resx">
+      <DependentUpon>LoginVentana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevosUsuarios.resx">
       <DependentUpon>NuevosUsuarios.cs</DependentUpon>

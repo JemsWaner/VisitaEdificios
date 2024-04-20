@@ -14,10 +14,12 @@ namespace Edificios
     public partial class NuevosUsuarios : Form
     {
         CapaNegocios.AdminActividades adminActividad;
+        CapaNegocios.AgregarDatos negociosCapa;
         public NuevosUsuarios()
         {
             InitializeComponent();
             contrasenaField.PasswordChar = '*';
+            negociosCapa = new CapaNegocios.AgregarDatos();
             adminActividad = new CapaNegocios.AdminActividades();
            tipoComboBox.DataSource= adminActividad.ObtenerTipo();
         }
@@ -40,6 +42,35 @@ namespace Edificios
         }
 
         private void tipoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+            String AdminONo = negociosCapa.UsuarioOAdmin(CapaNegocios.AgregarDatos.idUsuario);
+
+            if (AdminONo.Equals("Admin"))
+            {
+                OpcionesAdmin opcionesAdmin = new OpcionesAdmin();
+                opcionesAdmin.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                OpcionesNormal opcionesNormal = new OpcionesNormal();
+                opcionesNormal.Visible = true;
+                this.Visible = false;
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

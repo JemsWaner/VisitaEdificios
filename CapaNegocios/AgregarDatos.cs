@@ -21,6 +21,38 @@ namespace CapaNegocios
             connectionNow = new Connection();
         }
 
+        public bool IniciarSesion(string nombre,string contrasena)
+        {
+            bool entrarONo=false;
+
+            String sql = "IniciarSesion";
+
+            using (MySqlCommand comando = new MySqlCommand(sql, connectionNow.conn))
+            {
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@nombreUsuario", nombre);
+                comando.Parameters.AddWithValue("@contrasenaUsuario", contrasena);
+
+
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int resultado = reader.GetInt32(0);
+                        idUsuario= reader.GetInt32(1);
+
+                        if (resultado == 1)
+                        {
+                            entrarONo = true;
+                        }
+
+                        Console.WriteLine("el resultado es...."+ resultado);
+                    }
+                }
+            }
+            return entrarONo;
+        }
+
         public void InsertarUsuario(string nombreUsuario, string apellidoUsuario, string correoUsuario, string contrasenaUsuario, string motivoVisita, string idCarrera, string idEdificio, string idAula,string horaEntrada,string horaSalida)
         {
 

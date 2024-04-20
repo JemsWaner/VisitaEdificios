@@ -19,12 +19,17 @@ namespace Edificios
             InitializeComponent();
             
             contrasenaField.PasswordChar = '*';
+            pictureBox18.Visible= false;
+            label13.Visible=false;
+
             negociosCapa = new CapaNegocios.AgregarDatos();
             carreraComboBox.DataSource = negociosCapa.ObtenerCarrera();
             edificioComboBox.DataSource = negociosCapa.ObtenerEdificio();
             aulaComboBox.DataSource=negociosCapa.ObtenerAula();
 
             if (AgregarDatos.idUsuario != 0) {
+                pictureBox18.Visible = true;
+                label13.Visible=true;
                 MessageBox.Show(AgregarDatos.idUsuario.ToString());
             }
         }
@@ -99,6 +104,29 @@ namespace Edificios
         }
 
         private void carreraComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox18_Click(object sender, EventArgs e)
+        {
+            String AdminONo = negociosCapa.UsuarioOAdmin(CapaNegocios.AgregarDatos.idUsuario);
+
+            if (AdminONo.Equals("Admin"))
+            {
+                OpcionesAdmin opcionesAdmin = new OpcionesAdmin();
+                opcionesAdmin.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                OpcionesNormal opcionesNormal = new OpcionesNormal();
+                opcionesNormal.Visible = true;
+                this.Visible = false;
+            }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
         {
 
         }

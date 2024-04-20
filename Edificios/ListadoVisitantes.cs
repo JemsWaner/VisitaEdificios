@@ -13,11 +13,13 @@ namespace Edificios
     public partial class ListadoVisitantes : Form
     {
         CapaNegocios.AdminActividades AdminActividades;
+        CapaNegocios.AgregarDatos negociosCapa;
 
         public ListadoVisitantes()
         {
             InitializeComponent();
             AdminActividades = new CapaNegocios.AdminActividades();
+            negociosCapa = new CapaNegocios.AgregarDatos();
             listaUsuariosBox.Items.Clear();
             listaUsuariosBox.DataSource = AdminActividades.ObtenerListaUsuarios();
         }
@@ -45,6 +47,25 @@ namespace Edificios
                 MessageBox.Show("Debes seleccionar un usuario de la lista");
             }
 
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+            String AdminONo = negociosCapa.UsuarioOAdmin(CapaNegocios.AgregarDatos.idUsuario);
+
+            if (AdminONo.Equals("Admin"))
+            {
+                OpcionesAdmin opcionesAdmin = new OpcionesAdmin();
+                opcionesAdmin.Visible = true;
+                this.Visible = false;
+            }
+            else
+            {
+                OpcionesNormal opcionesNormal = new OpcionesNormal();
+                opcionesNormal.Visible = true;
+                this.Visible = false;
+            }
         }
     }
 }

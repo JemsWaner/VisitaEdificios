@@ -26,8 +26,8 @@ namespace Edificios
 
         private void button2_Click(object sender, EventArgs e)
         {
-            RegistrarUsuario registrarUsuario = new RegistrarUsuario();
-            registrarUsuario.Visible = true;
+           ListadoVisitantes listadoVisitantes = new ListadoVisitantes();
+            listadoVisitantes.Visible = true;
             this.Visible = false;
         }
 
