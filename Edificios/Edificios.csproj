@@ -58,6 +58,12 @@
     <Compile Include="EditarUsuario.Designer.cs">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstadoSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadoSolicitud.Designer.cs">
+      <DependentUpon>EstadoSolicitud.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListadoVisitantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadoSolicitud.resx">
+      <DependentUpon>EstadoSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoVisitantes.resx">
       <DependentUpon>ListadoVisitantes.cs</DependentUpon>

@@ -218,6 +218,22 @@ namespace CapaNegocios
             }
             return aulas;
         }
-
+        public string ObtenerSolicitudes(int id)
+        {
+            String solicitudes="";
+            using (MySqlCommand comando = new MySqlCommand("ObtenerSolicitudes", connectionNow.conn))
+            {
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idUsuario", id);
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        solicitudes=reader.GetString(0);
+                    }
+                }
+            }
+            return solicitudes;
+        }
     }
 }
