@@ -35,9 +35,9 @@ namespace Edificios
             if (seleccionado.Length != 0)
             {
                 String seleccionadoId = seleccionado.Substring(0, 1);
-                CapaNegocios.AdminActividades.idUsuario = Convert.ToInt32(seleccionadoId);
+                CapaNegocios.AdminActividades.idUsuarioAdmin = Convert.ToInt32(seleccionadoId);
                 MessageBox.Show(seleccionadoId);
-                MessageBox.Show("El idUsuario es: " + CapaNegocios.AdminActividades.idUsuario.ToString());
+                MessageBox.Show("El idUsuarioAdmin es: " + CapaNegocios.AdminActividades.idUsuarioAdmin.ToString());
                
                 EditarUsuario editarUsuario= new EditarUsuario();
                 editarUsuario.Visible = true;
@@ -66,6 +66,11 @@ namespace Edificios
                 opcionesNormal.Visible = true;
                 this.Visible = false;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

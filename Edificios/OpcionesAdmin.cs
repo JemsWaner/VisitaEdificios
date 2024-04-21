@@ -37,5 +37,10 @@ namespace Edificios
             nuevosUsuarios.Visible= true;
             this.Visible= false;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

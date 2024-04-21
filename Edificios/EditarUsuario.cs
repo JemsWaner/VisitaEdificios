@@ -28,7 +28,7 @@ namespace Edificios
             tipoComboBox.DataSource = adminActividad.ObtenerTipo();
             solicitudComboBox.DataSource= adminActividad.ObtenerSolicitud();
 
-            List<String> listaCampo = adminActividad.ObtenerCampos(CapaNegocios.AdminActividades.idUsuario);
+            List<String> listaCampo = adminActividad.ObtenerCampos(CapaNegocios.AdminActividades.idUsuarioAdmin);
             nombreField.Text = listaCampo[0];
             apellidoField.Text = listaCampo[1];
             contrasenaField.Text = listaCampo[2];
@@ -51,14 +51,10 @@ namespace Edificios
             String fechaentrada = entradaDateTime.Value.ToString(("yyyy-MM-dd"));
             String fechasalida = salidaDateTime.Value.ToString(("yyyy-MM-dd"));
 
-            negociosCapa.ActualizarUsuario(AgregarDatos.idUsuario, nombreField.Text, apellidoField.Text, correoField.Text, contrasenaField.Text, motivoField.Text, carreraComboBox.Text, edificioComboBox.Text, aulaComboBox.Text, fechaentrada, fechasalida);
-            negociosCapa.ActualizarTipoYUsuario(AgregarDatos.idUsuario,tipoComboBox.Text,solicitudComboBox.Text);
+            negociosCapa.ActualizarUsuario(CapaNegocios.AdminActividades.idUsuarioAdmin, nombreField.Text, apellidoField.Text, correoField.Text, contrasenaField.Text, motivoField.Text, carreraComboBox.Text, edificioComboBox.Text, aulaComboBox.Text, fechaentrada, fechasalida);
+            negociosCapa.ActualizarTipoYUsuario(CapaNegocios.AdminActividades.idUsuarioAdmin,tipoComboBox.SelectedItem.ToString(),solicitudComboBox.SelectedItem.ToString());
 
             MessageBox.Show("Usuario editado con exito");
-
-            OpcionesAdmin opcionesAdmin = new OpcionesAdmin();
-            opcionesAdmin.Visible = true;
-            this.Visible = false;
         }
 
         private void tipoComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +79,11 @@ namespace Edificios
                 opcionesNormal.Visible = true;
                 this.Visible = false;
             }
+        }
+
+        private void solicitudComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

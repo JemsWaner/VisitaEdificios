@@ -22,15 +22,20 @@ namespace Edificios
             adminActividad= new CapaNegocios.AdminActividades();
             String estadoSolicitud= negociosCapa.ObtenerSolicitudes(CapaNegocios.AgregarDatos.idUsuario);
             estadoLabel.Text = estadoSolicitud;
-            if (estadoSolicitud.Equals("cancelada")) {
-                coloresPanel.BackColor = Color.Firebrick;
+
+            if (estadoSolicitud == "cancelada")
+            {
+                coloresPanel.BackColor=Color.Red;
             }
-            else if (estadoSolicitud.Equals("aprobada")) {
-                coloresPanel.BackColor = Color.ForestGreen;
+            else if (estadoSolicitud == "aprobada")
+            {
+                coloresPanel.BackColor = Color.Green;
             }
-            else {
+            else
+            {
                 coloresPanel.BackColor = Color.Yellow;
             }
+
             List<String> listaCampo = adminActividad.ObtenerCampos(CapaNegocios.AgregarDatos.idUsuario);
             nombreLabel.Text = listaCampo[0].ToString();
             contrasenaLabel.Text = listaCampo[2].ToString();
@@ -61,6 +66,11 @@ namespace Edificios
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void coloresPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

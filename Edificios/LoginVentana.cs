@@ -28,10 +28,12 @@ namespace Edificios
         private void button1_Click(object sender, EventArgs e)
         {
          bool puedeEntrar= agregarDatos.IniciarSesion(nombreField.Text,contrasenaField.Text);
+           
             if (puedeEntrar.Equals(true)) {
                 MessageBox.Show("Si existe");
+                MessageBox.Show("El idUsuarioAdmin es: " + CapaNegocios.AgregarDatos.idUsuario.ToString());
+
                 String AdminONo = agregarDatos.UsuarioOAdmin(CapaNegocios.AgregarDatos.idUsuario);
-               
                 if (AdminONo.Equals("Admin")) { 
                     OpcionesAdmin opcionesAdmin= new OpcionesAdmin();
                     opcionesAdmin.Visible = true;
@@ -53,6 +55,13 @@ namespace Edificios
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void LinkRdireccional_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegistrarUsuario registrarUsuario = new RegistrarUsuario();
+            registrarUsuario.Visible = true;
+            this.Visible= false;
         }
     }
 }

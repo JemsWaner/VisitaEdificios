@@ -303,7 +303,7 @@
             this.label1.Location = new System.Drawing.Point(434, 136);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 33);
+            this.label1.Size = new System.Drawing.Size(151, 24);
             this.label1.TabIndex = 111;
             this.label1.Text = "Editar Usuarios";
             // 
@@ -520,6 +520,7 @@
             this.solicitudComboBox.Name = "solicitudComboBox";
             this.solicitudComboBox.Size = new System.Drawing.Size(282, 28);
             this.solicitudComboBox.TabIndex = 156;
+            this.solicitudComboBox.SelectedIndexChanged += new System.EventHandler(this.solicitudComboBox_SelectedIndexChanged);
             // 
             // pictureBox20
             // 
@@ -633,7 +634,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(69, 697);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(128, 25);
+            this.label14.Size = new System.Drawing.Size(96, 17);
             this.label14.TabIndex = 164;
             this.label14.Text = "Volver atras";
             // 
@@ -642,7 +643,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1070, 744);
+            this.ClientSize = new System.Drawing.Size(1070, 701);
             this.Controls.Add(this.pictureBox25);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.correoField);

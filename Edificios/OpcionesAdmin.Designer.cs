@@ -53,6 +53,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(698, 461);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -70,7 +71,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(138, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(423, 40);
+            this.label5.Size = new System.Drawing.Size(294, 29);
             this.label5.TabIndex = 2;
             this.label5.Text = "Opciones Administrador\r\n";
             // 

@@ -224,7 +224,7 @@ namespace CapaNegocios
             using (MySqlCommand comando = new MySqlCommand("ObtenerSolicitudes", connectionNow.conn))
             {
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@idUsuario", id);
+                comando.Parameters.AddWithValue("@idUsuarioAdmin", id);
                 using (MySqlDataReader reader = comando.ExecuteReader())
                 {
                     while (reader.Read())

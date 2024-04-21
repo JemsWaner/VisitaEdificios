@@ -14,7 +14,7 @@ namespace CapaNegocios
         public Connection connectionNow;
         public MySqlCommand comando;
         MySqlDataReader reader;
-        public static int idUsuario;
+        public static int idUsuarioAdmin;
         public AdminActividades()
         {
             connectionNow = new Connection();
