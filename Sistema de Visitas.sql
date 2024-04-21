@@ -131,7 +131,6 @@
 	DELIMITER ;
 
 CALL InsertarNuevoUsuario('AdminNuevo', 'ApellidoAdminNuevo', 'admin123', '2000-01-11', 'Admin');
-CALL InsertarUsuario('Juan', 'Pérez', 'juan@gmail.com', '123456', 'Visita de orientación', 'Ingeniería en Sistemas de Información', 'Edificio 1', 'Aula 101', '2004-12-24', '2024-12-24');
 CALL InsertarUsuario('María', 'González', 'maria@gmail.com', 'abcdef', 'Visita de estudio', 'Ingeniería en Computación', 'Edificio 2', 'Aula 102', '2024-04-19', '2024-04-20');
 CALL InsertarUsuario('Pedro', 'Martínez', 'pedro@hotmail.com', 'qwerty', 'Visita técnica', 'Ingeniería en Software', 'Edificio 3', 'Aula 103', '2024-04-18', '2024-04-20');
 	
@@ -286,8 +285,10 @@ END;
 //
 DELIMITER ;
 
-	call ObtenerCamposUsuario(1);
+	call ObtenerCamposUsuario(2);
 	call ObtenerSolicitud();
+    call ObtenerSolicitudes(2);
+    
 	select * from usuario;
 
 -- drop database VisitasSistema;
