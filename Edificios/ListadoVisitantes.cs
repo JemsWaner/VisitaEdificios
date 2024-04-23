@@ -35,7 +35,8 @@ namespace Edificios
             if (seleccionado.Length != 0)
             {
                 String seleccionadoId = seleccionado.Substring(0, 1);
-                CapaNegocios.AdminActividades.idUsuarioAdmin = Convert.ToInt32(seleccionadoId);
+                int idNuevo= Convert.ToInt32(seleccionadoId);
+                CapaNegocios.AdminActividades.idUsuarioAdmin = idNuevo;
                 MessageBox.Show(seleccionadoId);
                 MessageBox.Show("El idUsuarioAdmin es: " + CapaNegocios.AdminActividades.idUsuarioAdmin.ToString());
                

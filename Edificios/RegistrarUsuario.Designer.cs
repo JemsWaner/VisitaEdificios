@@ -142,7 +142,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(699, 701);
+            this.panel1.Size = new System.Drawing.Size(699, 1050);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -163,7 +163,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(71, 997);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 17);
+            this.label13.Size = new System.Drawing.Size(74, 25);
             this.label13.TabIndex = 113;
             this.label13.Text = "Volver";
             this.label13.Click += new System.EventHandler(this.label13_Click);
@@ -414,7 +414,7 @@
             this.label7.Location = new System.Drawing.Point(61, 751);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 20);
+            this.label7.Size = new System.Drawing.Size(126, 29);
             this.label7.TabIndex = 56;
             this.label7.Text = "Horas de:";
             // 
@@ -560,7 +560,7 @@
             this.label1.Location = new System.Drawing.Point(276, 136);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 24);
+            this.label1.Size = new System.Drawing.Size(176, 33);
             this.label1.TabIndex = 11;
             this.label1.Text = "Registrarse";
             // 
@@ -579,7 +579,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 701);
+            this.ClientSize = new System.Drawing.Size(699, 1050);
             this.Controls.Add(this.panel1);
             this.Name = "RegistrarUsuario";
             this.Text = "Form1";

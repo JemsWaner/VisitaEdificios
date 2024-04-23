@@ -14,6 +14,8 @@ namespace Edificios
     public partial class RegistrarUsuario : Form
     {
         CapaNegocios.AgregarDatos negociosCapa;
+        CapaNegocios.AdminActividades adminActividad;
+
         public RegistrarUsuario()
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace Edificios
             label13.Visible=false;
 
             negociosCapa = new CapaNegocios.AgregarDatos();
+            adminActividad = new CapaNegocios.AdminActividades();
+
             carreraComboBox.DataSource = negociosCapa.ObtenerCarrera();
             edificioComboBox.DataSource = negociosCapa.ObtenerEdificio();
             aulaComboBox.DataSource=negociosCapa.ObtenerAula();
@@ -31,6 +35,14 @@ namespace Edificios
                 pictureBox18.Visible = true;
                 label13.Visible=true;
                 MessageBox.Show(AgregarDatos.idUsuario.ToString());
+                registrarButton.Text = "Actualizar";
+
+                List<String> listaCampo = adminActividad.ObtenerCampos(CapaNegocios.AgregarDatos.idUsuario);
+                nombreField.Text = listaCampo[0];
+                apellidoField.Text = listaCampo[1];
+                contrasenaField.Text = listaCampo[2];
+                motivoField.Text = listaCampo[3];
+                correoField.Text = listaCampo[4];
             }
         }
 

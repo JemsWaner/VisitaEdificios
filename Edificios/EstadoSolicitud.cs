@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Edificios
 {
@@ -25,19 +27,32 @@ namespace Edificios
 
             if (estadoSolicitud == "cancelada")
             {
-                coloresPanel.BackColor=Color.Red;
+                coloresPanel.BackColor=Color.Firebrick;
+                estadoLabel.ForeColor = Color.White;
+
+
+                String link = @"C:\Users\Jems Waner\Documents\Basic Program\C#\Edificios\Edificios\iconos\icons8-cancel-96.png";
+                Image imagen = Image.FromFile(link);
+                iconPictureBox.Image = imagen;
+
             }
             else if (estadoSolicitud == "aprobada")
             {
-                coloresPanel.BackColor = Color.Green;
+                coloresPanel.BackColor = Color.SeaGreen;
+                estadoLabel.ForeColor=Color.White;
+
+                String link = @"C:\Users\Jems Waner\Documents\Basic Program\C#\Edificios\Edificios\iconos\icons8-approval-96.png";
+                Image imagen = Image.FromFile(link);
+                iconPictureBox.Image = imagen;
             }
             else
             {
                 coloresPanel.BackColor = Color.Yellow;
+                estadoLabel.Text = estadoSolicitud + "...".ToUpper();
             }
 
             List<String> listaCampo = adminActividad.ObtenerCampos(CapaNegocios.AgregarDatos.idUsuario);
-            nombreLabel.Text = listaCampo[0].ToString();
+            nombreLabel.Text = listaCampo[0].ToString()+ " " + listaCampo[1].ToString();
             contrasenaLabel.Text = listaCampo[2].ToString();
             correoLabel.Text = listaCampo[4].ToString();
         }

@@ -34,6 +34,8 @@ namespace Edificios
             contrasenaField.Text = listaCampo[2];
             motivoField.Text = listaCampo[3];
             correoField.Text = listaCampo[4];
+
+           MessageBox.Show(CapaNegocios.AdminActividades.idUsuarioAdmin.ToString());
         }
 
         private void EditarUsuario_Load(object sender, EventArgs e)
@@ -53,8 +55,9 @@ namespace Edificios
 
             negociosCapa.ActualizarUsuario(CapaNegocios.AdminActividades.idUsuarioAdmin, nombreField.Text, apellidoField.Text, correoField.Text, contrasenaField.Text, motivoField.Text, carreraComboBox.Text, edificioComboBox.Text, aulaComboBox.Text, fechaentrada, fechasalida);
             negociosCapa.ActualizarTipoYUsuario(CapaNegocios.AdminActividades.idUsuarioAdmin,tipoComboBox.SelectedItem.ToString(),solicitudComboBox.SelectedItem.ToString());
-
+            
             MessageBox.Show("Usuario editado con exito");
+            MessageBox.Show(CapaNegocios.AdminActividades.idUsuarioAdmin.ToString());
         }
 
         private void tipoComboBox_SelectedIndexChanged(object sender, EventArgs e)
